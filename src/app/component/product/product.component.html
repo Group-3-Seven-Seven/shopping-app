@@ -1,13 +1,14 @@
-<app-categories></app-categories>
+<app-categories (actionEmitter) = "filter($event)"></app-categories>
+<div class="card-top container-fluid"></div>
 <div class="container">
     <div class="row">
-        <ng-container *ngFor="let item of productList">
-            <div>
-                <img src="{{item.image}}" alt="{{item.title}}">
-                <h4> {{item.title}} </h4>
-                <p> {{item.description}} </p>
-                <p><strong> {{item.price | currency: '&#8369;' : 'code'}} </strong></p>
-                <button (click) = addToCart(item)> Add to cart </button>
+        <ng-container *ngFor="let item of filterByCategory | filter:searchKey:'title'">
+            <div class="card col-md-3">
+                    <img src="{{item.image}}" alt="{{item.title}}">
+                    <h4> {{item.title}} </h4>
+                    <p> {{item.description}} </p>
+                    <p><strong> {{item.price | currency: '&#8369;' : 'code'}} </strong></p>
+                    <button class="btn btn-primary" (click) = addToCart(item)> Add to cart </button>
             </div>
         </ng-container>
     </div>

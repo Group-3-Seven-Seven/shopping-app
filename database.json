@@ -1,28 +1,85 @@
 {
-  "products": [
-      {
-          "id": 1,
-          "title": "Vivo S1",
-          "price": 1588.00,
-          "description": "6+128GB 5000mAh Built In Battery",
-          "category": "mobiles",
-          "image": "assets/images/products/mobiles/vivos1.jpg"
-      },
-      {
-          "id": 2,
-          "title": "Realmi 9i",
-          "price": 1599.00,
-          "description": "6.3inch HD+ Full Display cellphone 16GB+512GB",
-          "category": "mobiles",
-          "image": "assets/images/products/mobiles/realmi9i.jpg"
-      },
-      {
-          "id": 3,
-          "title": "Narzo 50",
-          "price": 8999.00,
+    "products": [
+        {
+            "id": 1,
+            "title": "Vivo S1",
+            "price": 1588.00,
+            "description": "6+128GB 5000mAh Built In Battery",
+            "category": "mobiles",
+            "image": "assets/images/products/mobiles/vivos1.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Realmi 9i",
+            "price": 1599.00,
+            "description": "6.3inch HD+ Full Display cellphone 16GB+512GB",
+            "category": "mobiles",
+            "image": "assets/images/products/mobiles/realmi9i.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Narzo 50",
+            "price": 8999.00,
+            "description": "6GB RAM + 128GB ROM Android Smartphone",
+            "category": "mobiles",
+            "image": "assets/images/products/mobiles/narzo50.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Redmi Note 11",
+          "price": 9959.00,
           "description": "6GB RAM + 128GB ROM Android Smartphone",
           "category": "mobiles",
-          "image": "assets/images/products/mobiles/narzo50.jpg"
-      }
-  ]
-}
+          "image": "assets/images/products/mobiles/redminote11.jpg"
+      },
+      {
+          "id": 5,
+          "title": "Samsung Galaxy A52",
+          "price": 19990.00,
+          "description": "5G, 8GB RAM + 128GB ROM Android Smartphone",
+          "category": "mobiles",
+          "image": "assets/images/products/mobiles/samsunggalaxya52.jpg"
+      },
+      {
+          "id": 6,
+          "title": "ASUS Laptop L210",
+          "price": 9596.00,
+          "description": "11.6in Ultra Thin, Intel Celeron N4020 Processor, 4GB RAM, 64GB eMMC Storage, Windows 10 Home in S Mode with One Year of Office 365 Personal, L210MA-DB02,Star Black",
+          "category": "laptops and computers",
+          "image": "assets/images/products/laptops_and_computers/asusL210.jpg"
+      },
+      {
+          "id": 7,
+          "title": "HP Spectre x360 13.5 2-in-1 Laptop 14t-ef000",
+          "price": 62500,
+          "description": "Windows 11 Home, Intel® Core™ i5-1235U (up to 4.4 GHz, 12 MB L3 cache, 10 cores, 12 threads) + Intel® Iris® Xe Graphics + 8 GB(Onboard)",
+          "category": "laptops and computers",
+          "image": "assets/images/products/laptops_and_computers/HPSpectre.png"
+      },
+      {
+          "id": 8,
+          "title": "ACER Aspire 3 A315-35-P5N9",
+          "price": 24499,
+          "description": "15.6in Full HD, Intel Pentium N6000, 8GB",
+          "category": "laptops and computers",
+          "image": "assets/images/products/laptops_and_computers/AcerAspire3.jpg"
+      },
+      {
+          "id": 9,
+          "title": "SAMSUNG GALAXY BOOK2 PRO 360",
+          "price": 103455.00,
+          "description": "15.6in 1080P, Amoled Touch Screen",
+          "category": "laptops and computers",
+          "image": "assets/images/products/laptops_and_computers/SamsungGalaxyBook2Pro360.jpg"
+      },
+      {
+          "id": 10,
+          "title": "Apple MacBook Air",
+          "price": 57890.00,
+          "description": "13-inch (M1, 2020) - 256GB",
+          "category": "laptops and computers",
+          "image": "assets/images/products/laptops_and_computers/applemacbookair.jpg"
+      }  
+    ]
+  }
+  

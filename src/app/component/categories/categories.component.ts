@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-categories',
@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-
+  @Output() actionEmitter = new EventEmitter<string>();
   image_url = "assets/images/categories";
   
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  filter(category: string){
+    this.actionEmitter.emit(category)
+  }
 }
