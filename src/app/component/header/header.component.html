@@ -1,0 +1,19 @@
+<header>
+    <div>
+      <div>
+        <!--logo here -->
+      </div>
+      <div>
+        <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+      </div>
+      <span class="fas fa-search search-icon"></span>
+      <!-- if logged in -->
+      <a routerLink="/cart">
+        <i class="fas fa-cart-plus"></i>
+      </a>
+        <span>{{totalItem}}</span>
+      <!-- if not logged in-->
+      <a href="/login">LOG IN</a>
+    </div>
+  </header>
+  
