@@ -17,17 +17,20 @@
                 <input [(ngModel)] = "max" type="number" id="max" class="form-control" min="0">
                 <button type="submit"> Filter </button>
         </div>
-    <div class="card shadow-sm">
-        <div class=" row" >
-            <ng-container *ngFor="let item of filterByCategory | filter:searchKey:'title' | pricefilter:[min, max] | sort:[SortbyParam, SortDirection]">
-                <div class="card col-md-3">
+    <ng-container *ngIf="(filterByCategory | filter:searchKey:'title') as result">
+        <div class="card shadow-sm">
+            <div class=" row" >                   
+                <ng-container *ngFor="let item of result | pricefilter:[min, max] | sort:[SortbyParam, SortDirection]">
+                    <div class="card col-md-3">
                         <img src="{{item.image}}" alt="{{item.title}}">
                         <h4> {{item.title}} </h4>
                         <p> {{item.description}} </p>
                         <p><strong> {{item.price | currency: '&#8369;' : 'code'}} </strong></p>
-                        <button class="btn btn-primary" (click) = addToCart(item)> Add to cart </button>
-                </div>
-            </ng-container>
+                        <button class="btn btn-primary" (click) = addToCart(item)> Add to cart </button>                                    
+                    </div>
+                </ng-container>       
+            </div>
         </div>
-    </div>
+        <app-not-found [visible]="result.length<=0"></app-not-found>
+    </ng-container>
 </div>

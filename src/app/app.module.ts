@@ -18,6 +18,7 @@ import { ForgotPasswordComponent } from './component/forgot-password/forgot-pass
 import { NavComponent } from './component/nav/nav.component';
 import { HomeComponent } from './component/home/home.component';
 import { PriceFilterPipe } from './filter/pricefilter.pipe';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PriceFilterPipe } from './filter/pricefilter.pipe';
     SignupComponent,
     ForgotPasswordComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
 
   ],
   imports: [
