@@ -7,6 +7,7 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { CheckOutComponent } from './component/check-out/check-out.component';
+import { PendingOrderComponent } from './component/pending-orders/pending-order.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
     path: "checkout",
     component: CheckOutComponent
   },
+  {
+    path: "pending",
+    component: PendingOrderComponent
+  }
 ];
 
 @NgModule({

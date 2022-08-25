@@ -1,3 +1,4 @@
+<h4>Delivery Information</h4>
 <ng-container *ngIf="visibility">
         <div class="mb-3">
             <label for="fullname">Full Name</label><br/>
@@ -50,7 +51,8 @@
                     </tr>
                     <tr>
                         <td><strong>Grand Total: {{grandTotal | currency: '&#8369;' : 'code'}}</strong></td>
-                        <td><button class="btn btn-danger" (click)="placeOrder()">Place Order</button></td>
+                        <td><button class="btn btn-danger" routerLink="/pending" [disabled]="visibility" (click)="placeOrder()">Place Order</button></td>
+                        <p *ngIf="visibility"><i>Please fill in delivery information</i></p>
                     </tr>
                 </tbody>
             </table>
