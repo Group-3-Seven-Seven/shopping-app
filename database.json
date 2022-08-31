@@ -16,19 +16,19 @@
       "id": 5
     },
     {
-      "username": "jaz",
-      "password": "aloha",
+      "id": 6,
       "firstname": "alisa",
       "middlename": "aloha",
       "lastname": "alisa",
+      "username": "jaz",
       "email": "carla@gmail.com",
+      "password": "aloha",
       "mobilenumber": "09164567890",
       "role": "user",
       "status": "activated",
-      "birthdate": "2022-08-05",
-      "interest": "09164567890",
       "address": "09164567890",
-      "id": 6
+      "interest": "09164567890",
+      "birthdate": "2022-08-05"
     }
   ],
   "products": [
@@ -39,9 +39,9 @@
       "price": 5300,
       "description": "Regular fit, Lace closure, Leather upper, Comfortable",
       "category": "adidas",
+      "stock": 50,
       "image": "assets/images/products/shoes/adidas/superstar.png",
-      "totalItemSale": 91,
-      "stock": -41
+      "totalItemSale": 10
     },
     {
       "id": 2,

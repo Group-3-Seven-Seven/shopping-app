@@ -28,6 +28,7 @@ import { HasRoleGuard } from './guard/has-role.guard';
 import { PendingOrderComponent } from './component/pending-orders/pending-order.component';
 import { TopFivePipe } from './filter/topItems.pipe';
 import { FooterComponent } from './component/footer/footer.component';
+import { AcknowledgementComponent } from './component/acknowledgement/acknowledgement.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { FooterComponent } from './component/footer/footer.component';
     ProductAdminDashboardComponent,
     PendingOrderComponent,
     TopFivePipe,
-    FooterComponent
+    FooterComponent,
+    AcknowledgementComponent
   ],
   imports: [
     BrowserModule,

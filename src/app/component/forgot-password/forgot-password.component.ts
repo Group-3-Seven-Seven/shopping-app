@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserCartService } from 'src/app/service/userCart.service';
 
 
 @Component({
@@ -12,9 +13,9 @@ import { Router } from '@angular/router';
 export class ForgotPasswordComponent implements OnInit {
   forgotPassword !: FormGroup;
   password : string = '';
-  @Output() actionEmitter = new EventEmitter<any>()
 
-  constructor(private http: HttpClient, private router: Router, private formbuilder: FormBuilder) { }
+  constructor(private http: HttpClient, private router: Router, private formbuilder: FormBuilder,
+    private userCartService : UserCartService) { }
 
   ngOnInit(): void {
     this.forgotPassword = this.formbuilder.group({
@@ -25,6 +26,8 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   submit() {
+    const cartName = this.forgotPassword.value.username;
+    const cartPassword = this.forgotPassword.value.password;
     this.http.get<any>("http://localhost:3000/post")
       .subscribe(res => {
         const user = res.find((a: any) => {
@@ -33,8 +36,11 @@ export class ForgotPasswordComponent implements OnInit {
         });
         if (user) {
             this.password = user.password
-            alert( "Your password is " + this.password)
+            this.router.navigate(['acknowledgement'])
+            // alert( "Your password is " + this.password)
+            this.userCartService.loadUserDetails(cartName,this.password)
             this.forgotPassword.reset();
+            this.router.navigate(['acknowledgement'])
         }
         else{
           alert("Input is invalid")
@@ -42,8 +48,5 @@ export class ForgotPasswordComponent implements OnInit {
       }, err => {
         alert("Something went wrong!")
       })
-  }
-  sendAction(){
-    this.actionEmitter.emit(this.password)
   }
 }
