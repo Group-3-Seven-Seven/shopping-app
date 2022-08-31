@@ -2,12 +2,12 @@
     <div class="container-fluid">
         <h1>Product Dashboard</h1>
         <div class="d-flex">
-            <button  routerLink="../admin-dashboard" type="button" class="btn btn-success">Manage Users</button>
-            <button  *ngIf="!visibility" type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>
-            <button *ngIf="visibility" (click)="showButton()"  type="button" class="btn btn-success">All Products</button>
-            <button *ngIf="!visibility" (click)="clickAddProduct()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Product</button>
+            <button  routerLink="../admin-dashboard" type="button" class="btn btn-success">Manage Users</button>&nbsp;
+            <button  *ngIf="!visibility" type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>&nbsp;
+            <button *ngIf="visibility" (click)="showButton()"  type="button" class="btn btn-success">All Products</button>&nbsp;
+            <button *ngIf="!visibility" (click)="clickAddProduct()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Product</button>&nbsp;
            
-            <button (click)="logout()" type="button" class="btn btn-success">Logout</button>
+            <button (click)="logout()" type="button" class="btn btn-danger">Logout</button>
         </div>
     </div>
 </nav>

@@ -4,10 +4,10 @@
     <div class="d-flex">
       <button *ngIf="!visibility" (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
         class="btn btn-success">Add User</button>
-        <button *ngIf="visibility" (click)="showButton()" type="button" class="btn btn-success">Manage Users</button>
-      <button *ngIf="!visibility" type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>
-      <button routerLink="../product-admin-dashboard" type="button" class="btn btn-success">All Products</button>
-      <button (click)="logout()" type="button" class="btn btn-success">Logout</button>
+        <button *ngIf="visibility" (click)="showButton()" type="button" class="btn btn-success">Manage Users</button>&nbsp;
+      <button *ngIf="!visibility" type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>&nbsp;
+      <button routerLink="../product-admin-dashboard" type="button" class="btn btn-success">All Products</button>&nbsp;
+      <button (click)="logout()" type="button" class="btn btn-danger">Logout</button>
     </div>
   </div>
 </nav>
