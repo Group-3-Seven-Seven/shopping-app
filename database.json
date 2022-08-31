@@ -8,12 +8,12 @@
       "username": "chuapogi",
       "email": "edrickpogi@gmail.com",
       "password": "chuapogi",
-      "mobilenumber": "1234567890",
+      "mobilenumber": "09196719638",
       "role": "user",
       "status": "activated",
-      "birthdate": "2022-08-30",
+      "address": "Taguig City",
       "interest": "biking",
-      "address": "Taguig City"
+      "birthdate": "2022-08-30"
     },
     {
       "username": "admin",
@@ -29,6 +29,49 @@
       "interest": "biking",
       "address": "Taguig City",
       "id": 5
+    },
+    {
+      "id": 6,
+      "firstname": "James",
+      "middlename": "Jirues",
+      "lastname": "Abdul",
+      "username": "user",
+      "email": "admin@gmail.com",
+      "password": "user",
+      "mobilenumber": "12345678901",
+      "role": "user",
+      "birthdate": "2022-08-30",
+      "status": "activated"
+    },
+    {
+      "username": "user12",
+      "password": "user",
+      "firstname": "John",
+      "middlename": "FASDGAGA",
+      "lastname": "admin11",
+      "email": "fasfsa@gmail.com",
+      "mobilenumber": "1234567890",
+      "role": "user",
+      "status": "activated",
+      "birthdate": "2022-08-03",
+      "interest": "Bike",
+      "address": "Taguig",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "firstname": "John",
+      "middlename": "FASDGAGA",
+      "lastname": "safafafa",
+      "username": "user082898",
+      "email": "sdada@gmail.com",
+      "password": "user",
+      "mobilenumber": "12345678901",
+      "role": "user",
+      "status": "activated",
+      "address": "Taguig",
+      "interest": "Biking",
+      "birthdate": "2022-08-01"
     }
   ],
   "products": [
@@ -533,6 +576,22 @@
       "id": 1,
       "username": "belle",
       "password": "aloha",
+      "orders": [],
+      "cartTotalQuantity": 0,
+      "grandTotal": 0
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "user",
+      "orders": [],
+      "cartTotalQuantity": 0,
+      "grandTotal": 0
+    },
+    {
+      "id": 3,
+      "username": "user12",
+      "password": "user",
       "orders": [],
       "cartTotalQuantity": 0,
       "grandTotal": 0

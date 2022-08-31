@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { UserCartService } from 'src/app/service/userCart.service';
-import { EmployeeModel } from '../admin-dashboard/admin-dashboard.model';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +16,6 @@ export class LoginComponent implements OnInit {
   changetype: boolean = true;
   submitted: boolean = false;
   loading = false;
-  dashboardObj: EmployeeModel = new EmployeeModel();
 
 
   loginForm !: FormGroup;
@@ -61,9 +59,6 @@ export class LoginComponent implements OnInit {
           if (user.status === 'activated') {
             this.loginForm.reset();
             this.userCartService.loadUserCart(cartName, cartPassword),
-            this.dashboardObj = user
-            this.getProfile()
-            console.log(this.dashboardObj)
             this.userCartService.loadUserDetails(cartName,cartPassword)
               localStorage.setItem('token', cartPassword + cartName)
             this.router.navigate(['product'])

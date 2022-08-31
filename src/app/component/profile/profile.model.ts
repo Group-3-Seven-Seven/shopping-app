@@ -6,7 +6,10 @@ export class ProfileModel{
     username : string = '';
     email : string = '';
     password : string = '';
-    mobilenumber : string = '';
+    mobilenumber : number = 0;
     role :string = 'user'
     status : string = 'activated'
+    birthdate !: Date;
+    address : string = ''
+    interest : string = ''
 }

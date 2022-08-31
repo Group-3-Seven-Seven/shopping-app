@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 import { UserCartService } from 'src/app/service/userCart.service';
 import { ProfileModel } from './profile.model';
 
 
-import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -18,64 +17,87 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
+  dashboardObj: ProfileModel = new ProfileModel();
   formValue !: FormGroup;
   userData !: any;
-  dashboardObj: ProfileModel = new ProfileModel();
-  firstName !: string
+  disabled : boolean = true
+  showEdit : boolean = true
+  showUpdate !: boolean
+
 
 
   constructor(private formbuilder: FormBuilder,
     private api: ApiService, private http: HttpClient,
-    private router: Router, private userCartService: UserCartService) { }
+    private router: Router, private userCartService: UserCartService,
+    private userCart: UserCartService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      username: [''],
-      password: [''],
-      firstname: [''],
-      middlename: [''],
-      lastname: [''],
-      email: [''],
-      role: [''],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      firstname: ['', Validators.required],
+      middlename: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mobilenumber: ['', [Validators.required, Validators.pattern(/[0-9\+\-\ ]/)]],
+      role: ['user'],
       status: [''],
-      birthdate : Date,
-      address : [''],
-      listOfInterest : ['']
+      birthdate: Date,
+      interest: ['', Validators.required],
+      address: ['', Validators.required],
     })
     this.getUserName()
   }
 
-  getUserName(){
-    this.userCartService.getUserDetails().subscribe((data:any) => {
-      console.log(data)
-      this.firstName = data.firstname
-      console.log(this.firstName)
+  getUserName() {
+    this.userCartService.getUserDetails().subscribe((data: any) => {
+      this.dashboardObj.username = data.username
+      this.dashboardObj.firstname = data.firstname
+      this.dashboardObj.middlename = data.middlename
+      this.dashboardObj.lastname = data.lastname
+      this.dashboardObj.mobilenumber = data.mobilenumber
+      this.dashboardObj.email = data.email
+      this.dashboardObj.birthdate = data.birthdate
+      this.dashboardObj.address = data.address
+      this.dashboardObj.interest = data.interest
+      this.dashboardObj.role = data.role
+      this.dashboardObj.status = data.status
+      this.dashboardObj.id = data.id
+      this.dashboardObj.password = data.password
+      console.log(this.dashboardObj.mobilenumber)
+      console.log(data.mobilenumber)
     })
   }
 
-  getAllUser() {
-    this.api.getProfile()
-      .subscribe(res => {
-        this.userData = res;
-      })
-  }
 
   onEdit(data: any) {
-    this.dashboardObj.id = data.id
     this.formValue.controls['firstname'].setValue(data.firstname)
     this.formValue.controls['middlename'].setValue(data.middlename)
     this.formValue.controls['lastname'].setValue(data.lastname)
     this.formValue.controls['email'].setValue(data.email)
-    this.dashboardObj.username = data.username
-    this.dashboardObj.password = data.password
-    this.dashboardObj.mobilenumber = data.mobilenumber
+    this.formValue.controls['username'].setValue(data.username)
+    this.formValue.controls['mobilenumber'].setValue(data.mobilenumber)
+    this.formValue.controls['birthdate'].setValue(data.birthdate)
+    this.formValue.controls['address'].setValue(data.address)
+    this.formValue.controls['interest'].setValue(data.interest)
+    this.disabled = false;
+    this.showEdit = false;
+    this.showUpdate = true;
   }
 
   updateUserDetails() {
+    this.disabled = true;
+    this.showEdit = true;
+    this.showUpdate = false;
     this.dashboardObj.email = this.formValue.value.email;
     this.dashboardObj.firstname = this.formValue.value.firstname;
     this.dashboardObj.middlename = this.formValue.value.middlename;
     this.dashboardObj.lastname = this.formValue.value.lastname;
+    this.dashboardObj.username = this.formValue.value.username
+    this.dashboardObj.mobilenumber = this.formValue.value.mobilenumber
+    this.dashboardObj.birthdate = this.formValue.value.birthdate
+    this.dashboardObj.address = this.formValue.value.address
+    this.dashboardObj.interest = this.formValue.value.interest
 
     this.api.updateUser(this.dashboardObj, this.dashboardObj.id)
       .subscribe(res => {
@@ -83,31 +105,8 @@ export class ProfileComponent implements OnInit {
         let ref = document.getElementById('cancel')
         ref?.click();
         this.formValue.reset();
-        this.getAllUser();
+        this.getUserName();
       })
   }
 
-  postUserDetails() {
-    this.dashboardObj.email = this.formValue.value.email;
-    this.dashboardObj.firstname = this.formValue.value.firstname;
-    this.dashboardObj.username = this.formValue.value.username;
-    this.dashboardObj.middlename = this.formValue.value.middlename;
-    this.dashboardObj.lastname = this.formValue.value.lastname;
-    this.dashboardObj.password = this.formValue.value.password;
-    this.dashboardObj.role = 'user';
-
-    this.api.postUser(this.dashboardObj)
-      .subscribe((res: any) => {
-        console.log(res);
-        alert("Employee added successfully!")
-        let ref = document.getElementById('cancel')
-        ref?.click();
-        this.formValue.reset();
-        this.getAllUser();
-      }, err => {
-        alert("Something went wrong!")
-      });
-  }
-
-
-
+}

@@ -12,7 +12,7 @@ export class UserCartService {
   public userCartDetailsSubject = new BehaviorSubject<any>(this.userCartDetails)
   public userCartQuantity: any = this. getCartFromLocalStoragecartTotalItem();
   public userCartQuantitySubject = new BehaviorSubject<any>(this.userCartQuantity)
-  public userDetails: any = this.getCartFromLocalStorage();
+  public userDetails: any = this.getUserFromLocalStorage();
   public userDetailsSubject = new BehaviorSubject<any>(this.userDetails)
 
   constructor(private http: HttpClient) { 
@@ -71,8 +71,15 @@ export class UserCartService {
             lastname: x.lastname,
             email: x.email,
             mobilenumber: x.mobilenumber,
+            birthdate : x.birthdate,
+            interest : x.interest,
+            address : x.address,
+            role : x.role,
+            status : x.status
           }
           this.userDetailsSubject.next(this.userDetails);
+          const userJson = JSON.stringify(this.userDetails);
+          localStorage.setItem('User', userJson)
         }
       }
     })
@@ -84,6 +91,10 @@ export class UserCartService {
 
   getUserDetails(){
     return this.userDetailsSubject.asObservable();
+  }
+  getUserFromLocalStorage() {
+    const userJson = localStorage.getItem('User');
+    return userJson? JSON.parse(userJson): [];
   }
 
   getUserCartQuantity(){
