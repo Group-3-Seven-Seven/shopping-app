@@ -29,6 +29,21 @@
       "interest": "biking",
       "address": "Taguig City",
       "id": 5
+    },
+    {
+      "username": "jayson",
+      "password": "ultraman",
+      "firstname": "jayson",
+      "middlename": "amaga",
+      "lastname": "sequino",
+      "email": "jayson@gmail.com",
+      "mobilenumber": "09123456789",
+      "role": "user",
+      "status": "activated",
+      "birthdate": "1997-03-24",
+      "interest": "playing",
+      "address": "25 ultraman st. ultra man city",
+      "id": 6
     }
   ],
   "products": [
@@ -40,8 +55,8 @@
       "description": "Regular fit, Lace closure, Leather upper, Comfortable",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/superstar.png",
-      "totalItemSale": 0,
-      "stock": 50
+      "totalItemSale": 49,
+      "stock": 1
     },
     {
       "id": 2,
@@ -51,8 +66,8 @@
       "description": "Lace closure, Synthetic upper, Rubber outsole, Vegan",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/stansmith.png",
-      "totalItemSale": 0,
-      "stock": 50
+      "totalItemSale": 5,
+      "stock": 45
     },
     {
       "id": 3,
@@ -62,8 +77,8 @@
       "description": "Lace closure, Stretchy knit upper, BOOST midsole, Imported",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/nmd_s1.png",
-      "totalItemSale": 0,
-      "stock": 50
+      "totalItemSale": 1,
+      "stock": 49
     },
     {
       "id": 4,
@@ -213,7 +228,7 @@
       "name": "Converse",
       "title": "Chuck Taylor All Star Seasonal Color",
       "price": 3000,
-      "description": "Low-top skate shoe with rubber-backed suede upper, CONS traction rubber outsole",
+      "description": "Low-top skate shoe with rubber-backed suede upper",
       "category": "converse",
       "image": "assets/images/products/shoes/converse/ctassc.png",
       "totalItemSale": 0,
@@ -224,7 +239,7 @@
       "name": "Converse",
       "title": "Chuck Taylor All Star Lugged 2.0 Jacquard",
       "price": 4250,
-      "description": "Mismatched animal prints show off your wild side, Iconic Chuck Taylor ankle patch",
+      "description": "Mismatched animal prints show off your wild side, Iconic Chuck Taylor patch",
       "category": "converse",
       "image": "assets/images/products/shoes/converse/ctasl2j.png",
       "totalItemSale": 0,
@@ -235,7 +250,7 @@
       "name": "Converse",
       "title": "Chuck Taylor All Star Classic",
       "price": 3250,
-      "description": "High-top sneaker with cotton canvas upper, A mesh lining keeps it breathable",
+      "description": "High-top sneaker with cotton canvas upper, A mesh keeps breathable",
       "category": "converse",
       "image": "assets/images/products/shoes/converse/ctasc.png",
       "totalItemSale": 0,
@@ -268,7 +283,7 @@
       "name": "Puma",
       "title": "Court Rider I",
       "price": 4860,
-      "description": "",
+      "description": "Light as a feather and decked out with the most comfortable SOFTRIDE midsole",
       "category": "puma",
       "image": "assets/images/products/shoes/puma/cri.png",
       "totalItemSale": 0,
@@ -290,7 +305,7 @@
       "name": "Puma",
       "title": "Ultra 3.4 FG/AG Youth",
       "price": 3400,
-      "description": "",
+      "description": "Lightweight mesh upper with updated SPEEDCAGE for support during fast-forward motion",
       "category": "puma",
       "image": "assets/images/products/shoes/puma/u34.png",
       "totalItemSale": 0,
@@ -301,7 +316,7 @@
       "name": "Puma",
       "title": "BMW M Motorsport",
       "price": 3850,
-      "description": "",
+      "description": "BMW M Motorsport branding at side, PUMA Archive No. 1 Logo at side, Low boot construction",
       "category": "puma",
       "image": "assets/images/products/shoes/puma/bmw.png",
       "totalItemSale": 0,
@@ -312,7 +327,7 @@
       "name": "World Balance",
       "title": "ANATOMIC",
       "price": 1999,
-      "description": "Provides breathability, flexibility, and superior comfort Superior comfort",
+      "description": "Provides breathability, flexibility, and superior comfort, Affordable & durable",
       "category": "worldbalance",
       "image": "assets/images/products/shoes/worldbalance/anatomic.png",
       "totalItemSale": 0,
@@ -323,7 +338,7 @@
       "name": "World Balance",
       "title": "REGINALD M",
       "price": 1599,
-      "description": "",
+      "description": "Man-made leather, Midsole/outsole, Alpha grip rubber outsole, Superior comfort",
       "category": "worldbalance",
       "image": "assets/images/products/shoes/worldbalance/reginaldm.png",
       "totalItemSale": 0,
@@ -334,7 +349,7 @@
       "name": "World Balance",
       "title": "TRAIL HEAD M",
       "price": 2099,
-      "description": "",
+      "description": "Prevents heel shock & cushioning in every step, Better cushion and traction",
       "category": "worldbalance",
       "image": "assets/images/products/shoes/worldbalance/trailheadm.png",
       "totalItemSale": 0,
@@ -345,7 +360,7 @@
       "name": "World Balance",
       "title": "HANNIGAN M",
       "price": 1899,
-      "description": "",
+      "description": "Long lasting and value for money, Alpha grip- Provides better cushion and traction",
       "category": "worldbalance",
       "image": "assets/images/products/shoes/worldbalance/hanniganm.png",
       "totalItemSale": 0,
@@ -356,7 +371,7 @@
       "name": "World Balance",
       "title": "DAVENPORT M",
       "price": 1499,
-      "description": "",
+      "description": "Bounce pad insole system, comfort, style, and breathability, moisture control & ventilation",
       "category": "worldbalance",
       "image": "assets/images/products/shoes/worldbalance/davenportm.png",
       "totalItemSale": 0,
@@ -367,7 +382,7 @@
       "name": "Keds",
       "title": "Kid's Scout Water-Resistant Boot Black",
       "price": 2995,
-      "description": "",
+      "description": "A coated-canvas upper, Water and stain resistant, Lace-up closure for a snug fit, Imported",
       "category": "keds",
       "image": "assets/images/products/shoes/keds/scoutwater.png",
       "totalItemSale": 0,
@@ -378,7 +393,7 @@
       "name": "Keds",
       "title": "Kid's Crew Kick '75 Canvas White",
       "price": 2595,
-      "description": "",
+      "description": "Rubber sole, Retro silhouette, Memory foam footbed for all-day comfort and support",
       "category": "keds",
       "image": "assets/images/products/shoes/keds/crewkick.png",
       "totalItemSale": 0,
@@ -389,7 +404,7 @@
       "name": "Keds",
       "title": "Women's Demi TRX Leather Black",
       "price": 4295,
-      "description": "",
+      "description": "Leather upper, Lace up sneaker, Lugged, wavy rubber outsole for added traction",
       "category": "keds",
       "image": "assets/images/products/shoes/keds/demitrx.png",
       "totalItemSale": 0,
@@ -400,7 +415,7 @@
       "name": "Keds",
       "title": "Women's Alley Leather White",
       "price": 3495,
-      "description": "",
+      "description": "Lace-to-toe upper for an adjustable width, Soft canvas lining, Softerra™ footbed",
       "category": "keds",
       "image": "assets/images/products/shoes/keds/alleyleather.png",
       "totalItemSale": 0,
@@ -411,7 +426,7 @@
       "name": "Keds",
       "title": "Women's Chillax Femme Floral Twill",
       "price": 2795,
-      "description": "",
+      "description": "Cotton canvas upper, Soft and breathable jersey lining, Floral Print on Upper",
       "category": "keds",
       "image": "assets/images/products/shoes/keds/chillax.png",
       "totalItemSale": 0,
@@ -536,6 +551,26 @@
       "orders": [],
       "cartTotalQuantity": 0,
       "grandTotal": 0
+    },
+    {
+      "id": 2,
+      "username": "jayson",
+      "password": "ultraman",
+      "orders": [
+        {
+          "id": 1,
+          "name": "Adidas",
+          "title": "SuperStar",
+          "price": 5300,
+          "description": "Regular fit, Lace closure, Leather upper, Comfortable",
+          "category": "adidas",
+          "image": "assets/images/products/shoes/adidas/superstar.png",
+          "itemQuantity": 5,
+          "itemTotalPrice": 26500
+        }
+      ],
+      "cartTotalQuantity": 5,
+      "grandTotal": 26500
     }
   ]
 }

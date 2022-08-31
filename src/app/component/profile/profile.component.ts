@@ -108,6 +108,6 @@ export class ProfileComponent implements OnInit {
         alert("Something went wrong!")
       });
   }
-
+}
 
 
