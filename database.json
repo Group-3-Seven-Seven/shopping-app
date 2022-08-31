@@ -67,8 +67,8 @@
       "description": "Regular fit, Lace closure, Leather upper, Comfortable",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/superstar.png",
-      "totalItemSale": 89,
-      "stock": -39
+      "totalItemSale": 91,
+      "stock": -41
     },
     {
       "id": 2,
@@ -78,8 +78,8 @@
       "description": "Lace closure, Synthetic upper, Rubber outsole, Vegan",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/stansmith.png",
-      "totalItemSale": 8,
-      "stock": 42
+      "totalItemSale": 10,
+      "stock": 40
     },
     {
       "id": 3,
@@ -89,8 +89,8 @@
       "description": "Lace closure, Stretchy knit upper, BOOST midsole, Imported",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/nmd_s1.png",
-      "totalItemSale": 2,
-      "stock": 48
+      "totalItemSale": 3,
+      "stock": 47
     },
     {
       "id": 4,
