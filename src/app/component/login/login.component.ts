@@ -82,14 +82,6 @@ export class LoginComponent implements OnInit {
       })
   }
 
-  getProfile(){
-    this.http.get<any>("http://localhost:3000/post")
-    .subscribe(res=>{
-  },err=>{
-    alert("Something went wrong!")
-  })
-  }
-
 
 }
 
