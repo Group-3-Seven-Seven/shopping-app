@@ -2,10 +2,12 @@
     <div class="container-fluid">
         <h1>Product Dashboard</h1>
         <div class="d-flex">
-            <button (click)="clickAddProduct()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Product</button>
-            <button   type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>
             <button  routerLink="../admin-dashboard" type="button" class="btn btn-success">Manage Users</button>
-            <button routerLink="/logout" type="button" class="btn btn-success">Logout</button>
+            <button  *ngIf="!visibility" type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>
+            <button *ngIf="visibility" (click)="showButton()"  type="button" class="btn btn-success">All Products</button>
+            <button *ngIf="!visibility" (click)="clickAddProduct()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Product</button>
+           
+            <button (click)="logout()" type="button" class="btn btn-success">Logout</button>
         </div>
     </div>
 </nav>
@@ -18,6 +20,7 @@
             <th scope="col">Price</th>
             <th scope="col">Description</th>
             <th scope="col">Category</th>
+            <th scope="col">Stock</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -28,17 +31,16 @@
             <td>{{data.price}}</td>
             <td>{{data.description}}</td>
             <td>{{data.category}}</td>
-            
+            <td>{{data.stock}}</td>
             
             <td>
                 <button (click)="onEdit(data)" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-                <button (click)="deleteProduct(data)" class="btn btn-danger mx-3">Delete</button>
+                <button (click)="delete(data)" class="btn btn-danger mx-3" >Delete</button>
             </td>
         </tr>
     </tbody>
 </table>
 
- <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -74,6 +76,10 @@
                     <input type="text" formControlName="category" class="form-control" id="exampleInputLastName1" aria-describedby="emailHelp" placeholder="Category">
                 </div>
                 <div class="form-group mb-3">
+                    <label for="exampleInputLastName1">Stock</label>
+                    <input type="number" formControlName="stock" class="form-control" id="exampleInputLastName1" aria-describedby="emailHelp" placeholder="Category">
+                </div>
+                <div class="form-group mb-3">
                     <label for="exampleInputEmail1">Image</label>
                     <input type="text" formControlName="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Image">
                 </div>
@@ -88,6 +94,9 @@
     </div>
   </div>
 
+
+  <div *ngIf="visibility"  
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
   <h1>Top 5 Products</h1>
   <ng-container *ngIf="productList?.length != 0 || productList?.length != null">
     <div class="card-table">
@@ -121,6 +130,33 @@
         </div>
     </div>
 </ng-container>
+</div>
+
+
+<div class="modal fade" id="deactivateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Deactivate Confirmation</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+  
+  
+        <div class="modal-body">
+          <div class="form-group mb-3">
+            <label for="exampleInputFirstName1">Are you sure you want to delete this user?</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button (click)="deleteProduct(productData)" type="button" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 <br>
 <hr>

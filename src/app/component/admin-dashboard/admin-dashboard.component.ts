@@ -4,6 +4,7 @@ import { EmployeeModel } from './admin-dashboard.model';
 import { ApiService } from '../../service/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -19,10 +20,14 @@ export class AdminDashboardComponent implements OnInit {
   showUpdate !: boolean;
   showActivate !: boolean;
   showDeactivate: boolean = true;
+  visibility=false;
+  productList : any;
+
 
   constructor(private formbuilder: FormBuilder,
     private api: ApiService, private http: HttpClient,
-    private router: Router,) { }
+    private router: Router,
+    private cartService : CartService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
@@ -40,11 +45,24 @@ export class AdminDashboardComponent implements OnInit {
       address : ['',Validators.required],
     })
     this.getAllUser();
+
+    this.api.getProducts().subscribe(data => {
+      console.log("product admin")
+      console.log(data)
+      this.productList = data;
+    });
   }
   clickAddUser() {
     this.formValue.reset();
     this.showAdd = true;
     this.showUpdate = false;
+  }
+
+  logout() {   
+    this.cartService.updateStockAndItemSale();                      
+    this.router.navigate(['/product']);
+    localStorage.clear();
+
   }
 
   postUserDetails() {
@@ -135,6 +153,15 @@ export class AdminDashboardComponent implements OnInit {
         this.getAllUser();
       })
   }
+
+  topfiveItems(){
+    this.visibility = true
+  }
+
+  showButton(){
+    this.visibility = false
+  }
+
 
 }
 

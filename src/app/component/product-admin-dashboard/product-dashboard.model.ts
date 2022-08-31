@@ -5,5 +5,7 @@ export class Product{
     price : string = '';
     description : string = '';
     category : string = '';
+    stock : number = 0;
     image : string = '';
+    totalItemSale : number = 0;
 }

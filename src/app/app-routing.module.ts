@@ -12,6 +12,7 @@ import { ProductAdminDashboardComponent } from './component/product-admin-dashbo
 import { HasRoleGuard } from './guard/has-role.guard';
 import { ProfileComponent } from './component/profile/profile.component';
 import { PendingOrderComponent } from './component/pending-orders/pending-order.component';
+import { AcknowledgementComponent } from './component/acknowledgement/acknowledgement.component';
 
 
 
@@ -61,6 +62,10 @@ const routes: Routes = [
 {
   path: "pendingpage",
   component: PendingOrderComponent
+},
+{
+  path: "acknowledgement",
+  component: AcknowledgementComponent
 }
 ];
 

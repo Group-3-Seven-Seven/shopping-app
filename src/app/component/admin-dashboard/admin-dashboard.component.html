@@ -2,15 +2,17 @@
   <div class="container-fluid">
     <h1>Admin Dashboard</h1>
     <div class="d-flex">
-      <button (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      <button *ngIf="!visibility" (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
         class="btn btn-success">Add User</button>
-      <button  type="button" class="btn btn-success">Best Selling Poducts</button>
+        <button *ngIf="visibility" (click)="showButton()" type="button" class="btn btn-success">Manage Users</button>
+      <button *ngIf="!visibility" type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>
       <button routerLink="../product-admin-dashboard" type="button" class="btn btn-success">All Products</button>
-      <button routerLink="/logout" type="button" class="btn btn-success">Logout</button>
+      <button (click)="logout()" type="button" class="btn btn-success">Logout</button>
     </div>
   </div>
 </nav>
 
+<div *ngIf="!visibility" >
 <table class="table mt-3">
   <thead>
     <tr>
@@ -32,7 +34,7 @@
 
 
       <td>
-        <button *ngIf="data.status === 'activated'" (click)="onUpdate(data)" class="btn btn-danger mx-3"
+        <button [disabled] = "data.role === 'admin'" *ngIf="data.status === 'activated'" (click)="onUpdate(data)" class="btn btn-danger mx-3"
           data-bs-toggle="modal" data-bs-target="#deactivateModal">Deactivate</button>
         <button *ngIf="data.status === 'deactivated'" (click)="onUpdate(data)" class="btn btn-danger mx-3"
           data-bs-toggle="modal" data-bs-target="#activateModal">Activate</button>
@@ -41,12 +43,12 @@
   </tbody>
 </table>
 
-<!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">User Details</h5>
+        <h5 class="modal-title" id="examplfeModalLabel">User Details</h5>
         <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -171,7 +173,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="activateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -194,7 +196,46 @@
       </div>
     </div>
   </div>
-<br><br>
+</div>
+</div>
+
+
+  <div *ngIf="visibility" 
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <h1>Top 5 Products</h1>
+  <ng-container *ngIf="productList?.length != 0 || productList?.length != null">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table">
+                <thead>
+                    <tr class="tbhead">
+                        <th scope="col"> No. </th>
+                        <th scope="col"> Name </th>
+                        <th scope="col"> Image </th>
+                        <th scope="col"> Description </th>
+                        <th scope="col"> Price </th>
+                        <th scope="col"> Item Sold </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let item of productList | topFivefilter; let i = index">
+                    <tr class="tbbody" >
+                        <ng-container *ngIf="i<5">
+                            <td> {{i+1}} </td>
+                            <td> {{item.title}} </td>
+                            <td> <img src="{{item.image}}" alt={{item.title}} height="100px" width="100px"> </td>
+                            <td> {{item.description}} </td>
+                            <td> {{item.price | currency: '&#8369;' : 'code'}} </td>
+                            <td> {{item.totalItemSale}} </td>
+                        </ng-container>
+                    </tr>
+                </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</ng-container>
+</div>
 <br>
 <hr>
 <app-footer></app-footer>
