@@ -71,11 +71,13 @@ export class UserCartService {
             lastname: x.lastname,
             email: x.email,
             mobilenumber: x.mobilenumber,
+
             birthdate : x.birthdate,
             interest : x.interest,
             address : x.address,
             role : x.role,
             status : x.status
+
           }
           this.userDetailsSubject.next(this.userDetails);
           const userJson = JSON.stringify(this.userDetails);

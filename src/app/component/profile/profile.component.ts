@@ -25,7 +25,6 @@ export class ProfileComponent implements OnInit {
   showUpdate !: boolean
 
 
-
   constructor(private formbuilder: FormBuilder,
     private api: ApiService, private http: HttpClient,
     private router: Router, private userCartService: UserCartService,
@@ -49,6 +48,7 @@ export class ProfileComponent implements OnInit {
     this.getUserName()
   }
 
+
   getUserName() {
     this.userCartService.getUserDetails().subscribe((data: any) => {
       this.dashboardObj.username = data.username
@@ -66,6 +66,7 @@ export class ProfileComponent implements OnInit {
       this.dashboardObj.password = data.password
       console.log(this.dashboardObj.mobilenumber)
       console.log(data.mobilenumber)
+
     })
   }
 
@@ -110,3 +111,4 @@ export class ProfileComponent implements OnInit {
   }
 
 }
+

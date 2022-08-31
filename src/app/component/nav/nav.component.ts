@@ -43,7 +43,6 @@ export class NavComponent implements OnInit {
     localStorage.clear();
 
   }
-  
 
   getUserName(){
     this.userCartService.getUserCart().subscribe((data:any) => {

@@ -8,6 +8,7 @@
                 <form >
                         <div class="mb-3">
                             <label for="username">Username</label>
+
                             <input [disabled] = "this.disabled" type="text" class="form-control" placeholder="{{dashboardObj.username}}" id="username" aria-describedby="emailHelp">
                           </div>
                           <div class="mb-3">
@@ -45,9 +46,16 @@
                         </div>
                         <button *ngIf="showEdit" type="button"  (click)="onEdit(dashboardObj)" class="btn btn-primary">Edit</button>
                         <button type="button" *ngIf="showUpdate" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
+
                         <br>
                 </form>
             </div>
         </div>
     </div>
+
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+<hr>
+<app-footer></app-footer>
+

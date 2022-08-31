@@ -15,7 +15,6 @@ import { AdminDashboardComponent } from './component/admin-dashboard/admin-dashb
 import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { NavComponent } from './component/nav/nav.component';
-import { HomeComponent } from './component/home/home.component';
 
 import { ProfileComponent } from './component/profile/profile.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
@@ -28,6 +27,7 @@ import { ProductAdminDashboardComponent } from './component/product-admin-dashbo
 import { HasRoleGuard } from './guard/has-role.guard';
 import { PendingOrderComponent } from './component/pending-orders/pending-order.component';
 import { TopFivePipe } from './filter/topItems.pipe';
+import { FooterComponent } from './component/footer/footer.component';
 
 
 @NgModule({
@@ -45,14 +45,14 @@ import { TopFivePipe } from './filter/topItems.pipe';
     SignupComponent,
     ForgotPasswordComponent,
     NavComponent,
-    HomeComponent,
     ProfileComponent,
     ForgotPasswordComponent,
     NotFoundComponent,
     CheckOutComponent,
     ProductAdminDashboardComponent,
     PendingOrderComponent,
-    TopFivePipe
+    TopFivePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

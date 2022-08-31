@@ -15,22 +15,10 @@
           </div>
           <div class="form-group mb-3">
               <div class="form-group mb-3">
-                  <label for="housestreet">House No & Street</label><br>
-                  <input type="text" [(ngModel)]="houseStreet" id="housestreet" aria-describedby="emailHelp" placeholder="House No & Street">
+                  <label for="address">Address</label><br>
+                  <textarea disabled type="text" [(ngModel)]="Address" id="address" aria-describedby="emailHelp" placeholder="{{Address}}"></textarea>
                 </div>
             </div>
-            <div class="form-group mb-3">
-                <div class="form-group mb-3">
-                  <label for="barangay">Barangay</label><br>
-                  <input type="text" [(ngModel)]="barangay" id="barangay" aria-describedby="emailHelp" placeholder="Barangay">
-                </div>
-            </div>
-            <div class="form-group mb-3">
-                <div class="form-group mb-3">
-                  <label for="city">City</label><br>
-                  <input type="text" [(ngModel)]="city" id="city" aria-describedby="emailHelp" placeholder="City">
-              </div>
-          </div>
           <button type="submit" class="btn btn-primary" (click) = save()>Confirm</button>  
     </ng-container>
     <ng-container *ngIf="!visibility">
@@ -38,12 +26,8 @@
         <input disabled type="text" value="{{firstName}} {{middleName}} {{lastName}}">
         <h6> Mobile Number:<br></h6>
         <input disabled type="text" value="{{mobile}}">
-        <h6> House No & Street:<br></h6>
-        <input disabled type="text" value="{{houseStreet}}">
-        <h6> Barangay: </h6>
-        <input disabled type="text" value="{{barangay}}">
-        <h6> City: </h6>
-        <input disabled type="text" value="{{city}}">
+        <h6> Address:<br></h6>
+        <textarea disabled type="text" value="{{Address}}"></textarea>
     </ng-container>
     </div>
   
@@ -96,3 +80,6 @@
 </ng-container>
     </div>
 </div>
+<br>
+<hr>
+<app-footer></app-footer>
