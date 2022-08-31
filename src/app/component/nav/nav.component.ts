@@ -38,7 +38,7 @@ export class NavComponent implements OnInit {
   }
 
   logout() {   
-    this.cartService.updateStockAndItemSale();                      
+    // this.cartService.updateStockAndItemSale();                      
     this.router.navigate(['/product']);
     localStorage.clear();
 
@@ -47,7 +47,7 @@ export class NavComponent implements OnInit {
   getUserName(){
     this.userCartService.getUserCart().subscribe((data:any) => {
       this.username = data.username
-      console.log(data.password)
+      console.log(data.role)
     })
   }
 

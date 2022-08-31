@@ -1,20 +1,6 @@
 {
   "post": [
-    {
-      "id": 2,
-      "firstname": "edrick",
-      "middlename": "chua",
-      "lastname": "carreon",
-      "username": "chuapogi",
-      "email": "edrickpogi@gmail.com",
-      "password": "chuapogi",
-      "mobilenumber": "1234567890",
-      "role": "user",
-      "status": "activated",
-      "birthdate": "2022-08-30",
-      "interest": "biking",
-      "address": "Taguig City"
-    },
+   
     {
       "username": "admin",
       "password": "admin",
@@ -29,34 +15,8 @@
       "interest": "biking",
       "address": "Taguig City",
       "id": 5
-    },
-    {
-      "id": 6,
-      "firstname": "jayson",
-      "middlename": "amaga",
-      "lastname": "sequino",
-      "username": "jayson",
-      "email": "jayson@gmail.com",
-      "password": "ultraman",
-      "mobilenumber": "09123456789",
-      "role": "user",
-      "status": "deactivated"
-    },
-    {
-      "username": "ultraman",
-      "password": "ultraman",
-      "firstname": "Jayon",
-      "middlename": "Amaga",
-      "lastname": "Sequino",
-      "email": "ultraman@gmail.com",
-      "mobilenumber": "09123827461",
-      "role": "user",
-      "status": "activated",
-      "birthdate": "1990-06-13",
-      "interest": "Playing",
-      "address": "26 Ultraman St. Ultra Man City",
-      "id": 7
     }
+    
   ],
   "products": [
     {

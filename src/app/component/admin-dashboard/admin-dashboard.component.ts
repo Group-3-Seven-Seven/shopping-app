@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeModel } from './admin-dashboard.model';
 import { ApiService } from '../../service/api.service';
 import { HttpClient } from '@angular/common/http';
@@ -26,17 +26,20 @@ export class AdminDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
-      username: [''],
-      password: [''],
-      firstname: [''],
-      middlename: [''],
-      lastname: [''],
-      email: [''],
-      role: [''],
-      status: ['']
+      username : ['',Validators.required],
+      password : ['',Validators.required],
+      firstname : ['',Validators.required],
+      middlename : ['',Validators.required],
+      lastname : ['',Validators.required],
+      email : ['',[Validators.required,Validators.email]],
+      mobilenumber : ['',[Validators.required, Validators.pattern(/[0-9\+\-\ ]/)]],
+      role : ['user'],
+      status: ['activated'],
+      birthdate : Date,
+      interest : ['',Validators.required],
+      address : ['',Validators.required],
     })
     this.getAllUser();
-    this.checkStatus();
   }
   clickAddUser() {
     this.formValue.reset();
@@ -52,11 +55,15 @@ export class AdminDashboardComponent implements OnInit {
     this.dashboardObj.lastname = this.formValue.value.lastname;
     this.dashboardObj.password = this.formValue.value.password;
     this.dashboardObj.role = 'user';
+    this.dashboardObj.address = this.formValue.value.address;
+    this.dashboardObj.birthdate = this.formValue.value.birthdate;
+    this.dashboardObj.interest = this.formValue.value.interest;
+    this.dashboardObj.mobilenumber = this.formValue.value.mobilenumber
 
     this.api.postUser(this.dashboardObj)
       .subscribe((res: any) => {
         console.log(res);
-        alert("Employee added successfully!")
+        alert("User added successfully!")
         let ref = document.getElementById('cancel')
         ref?.click();
         this.formValue.reset();
@@ -84,34 +91,8 @@ export class AdminDashboardComponent implements OnInit {
     this.showDeactivate = false;
   }
 
-  onEdit(data: any) {
-    this.showAdd = false;
-    this.showUpdate = true;
-    this.dashboardObj.id = data.id
-    this.formValue.controls['firstname'].setValue(data.firstname)
-    this.formValue.controls['middlename'].setValue(data.middlename)
-    this.formValue.controls['lastname'].setValue(data.lastname)
-    this.formValue.controls['email'].setValue(data.email)
-    this.dashboardObj.username = data.username
-    this.dashboardObj.password = data.password
-    this.dashboardObj.mobilenumber = data.mobilenumber
-  }
-
-  updateUserDetails() {
-    this.dashboardObj.email = this.formValue.value.email;
-    this.dashboardObj.firstname = this.formValue.value.firstname;
-    this.dashboardObj.middlename = this.formValue.value.middlename;
-    this.dashboardObj.lastname = this.formValue.value.lastname;
-
-    this.api.updateUser(this.dashboardObj, this.dashboardObj.id)
-      .subscribe(res => {
-        alert("Updated Successfully!")
-        let ref = document.getElementById('cancel')
-        ref?.click();
-        this.formValue.reset();
-        this.getAllUser();
-      })
-  }
+  
+ 
 
 
   onUpdate(data: any) {
@@ -123,6 +104,10 @@ export class AdminDashboardComponent implements OnInit {
     this.dashboardObj.lastname = data.lastname;
     this.dashboardObj.password = data.password;
     this.dashboardObj.mobilenumber = data.mobilenumber;
+    this.dashboardObj.address = data.address;
+    this.dashboardObj.birthdate = data.birthdate;
+    this.dashboardObj.interest = data.interest;
+
   }
 
   updateUserStatus(){
@@ -151,25 +136,8 @@ export class AdminDashboardComponent implements OnInit {
       })
   }
 
-  checkStatus(){
-    this.http.get<any>("http://localhost:3000/post")
-      .subscribe(res => {
-        const user = res.find((a: any) => {
-          return a.role === "activated"
-        });
-        if (user){
-          this.showActivate = true;
-          this.showDeactivate = false;
-        }else{
-          this.showActivate = false;
-          this.showDeactivate = true;
-        }
-  }, err => {
-    alert("Something went wrong!")
-  })
 }
 
-}
 
 
 

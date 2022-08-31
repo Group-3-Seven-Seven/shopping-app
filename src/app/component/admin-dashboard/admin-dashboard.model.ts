@@ -9,5 +9,8 @@ export class EmployeeModel{
     mobilenumber : string = '';
     role :string = 'user'
     status : string = 'activated'
+    birthdate !: Date
+    address : string = '';
+    interest : string = '';
 
 }

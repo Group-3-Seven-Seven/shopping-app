@@ -65,7 +65,7 @@
                         </div>
 
                         <br>
-                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                        <button [disabled]="signupForm.invalid" type="submit" class="btn btn-primary">Sign Up</button>
 
                       </form>
                       <a style="color: #fff; " routerLink="../login" class="btn btn-link">Already have account? Click to login.</a>
