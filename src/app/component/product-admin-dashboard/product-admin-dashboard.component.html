@@ -3,13 +3,13 @@
         <h1>Product Dashboard</h1>
         <div class="d-flex">
             <button (click)="clickAddProduct()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success">Add Product</button>
-            <button   type="button" class="btn btn-success">Best Selling Poducts</button>
+            <button   type="button" class="btn btn-success" (click)="topfiveItems()">Best Selling Poducts</button>
             <button  routerLink="../admin-dashboard" type="button" class="btn btn-success">Manage Users</button>
         </div>
     </div>
 </nav>
 
-<table class="table mt-3">
+<table *ngIf="!visibility"  class="table mt-3">
     <thead>
         <tr>
             <th scope="col">Name</th>
@@ -88,8 +88,7 @@
   </div>
 
   <h1>Top 5 Products</h1>
-  <ng-container *ngIf="productList.length != 0">
-    <ng-container *ngFor="let item of productList | topFivefilter:5">
+  <ng-container *ngIf="productList?.length != 0 || productList?.length != null">
     <div class="card-table">
         <div class="cart-product">
             <table class="table">
@@ -104,20 +103,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="tbbody" *ngFor="let item of productList; let i = index">
-                        <td> {{i+1}} </td>
-                        <td> {{item.title}} </td>
-                        <td> <img src="{{item.image}}" alt={{item.title}} height="100px" width="100px"> </td>
-                        <td> {{item.description}} </td>
-                        <td> {{item.price | currency: '&#8369;' : 'code'}} </td>
-                        <td> {{item.totalItemSale}} </td>
+                    <ng-container *ngFor="let item of productList | topFivefilter; let i = index">
+                    <tr class="tbbody" >
+                        <ng-container *ngIf="i<5">
+                            <td> {{i+1}} </td>
+                            <td> {{item.title}} </td>
+                            <td> <img src="{{item.image}}" alt={{item.title}} height="100px" width="100px"> </td>
+                            <td> {{item.description}} </td>
+                            <td> {{item.price | currency: '&#8369;' : 'code'}} </td>
+                            <td> {{item.totalItemSale}} </td>
+                        </ng-container>
                     </tr>
+                </ng-container>
                 </tbody>
             </table>
         </div>
     </div>
 </ng-container>
-</ng-container>
+
 <br>
 <hr>
 <app-footer></app-footer>

@@ -15,6 +15,7 @@ export class ProductAdminDashboardComponent implements OnInit {
   showAdd !: boolean;
   showUpdate !: boolean;
   productList : any;
+  visibility=false;
 
   constructor(private formbuilder: FormBuilder,
     private api: ApiService) { }
@@ -30,6 +31,8 @@ export class ProductAdminDashboardComponent implements OnInit {
     })
     this.getAllProducts();
     this.api.getProducts().subscribe(data => {
+      console.log("product admin")
+      console.log(data)
       this.productList = data;
     });
   }
@@ -106,6 +109,10 @@ export class ProductAdminDashboardComponent implements OnInit {
         this.formValue.reset();
         this.getAllProducts();
       })
+  }
+
+  topfiveItems(){
+    this.visibility = true
   }
 
 }

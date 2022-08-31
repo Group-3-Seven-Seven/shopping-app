@@ -42,6 +42,16 @@
 </ng-container>
 <br>
 <hr>
+<ng-container *ngIf="products.length == 0">
+    <div class="container">
+        <div class="center">
+            <h1 class="card-title"> My Cart </h1>
+            <img src="{{image_url}}/cart.png" alt="">
+            <h4> Your have no pending orders! </h4>
+            <button class = "btn btn-primary" routerLink="/product"> Shop Now </button>
+        </div>
+    </div>    
+</ng-container>
 <app-footer></app-footer>
 
 
