@@ -1,6 +1,5 @@
 {
   "post": [
-   
     {
       "username": "admin",
       "password": "admin",
@@ -15,8 +14,22 @@
       "interest": "biking",
       "address": "Taguig City",
       "id": 5
+    },
+    {
+      "username": "jaz",
+      "password": "aloha",
+      "firstname": "alisa",
+      "middlename": "aloha",
+      "lastname": "alisa",
+      "email": "carla@gmail.com",
+      "mobilenumber": "09164567890",
+      "role": "user",
+      "status": "activated",
+      "birthdate": "2022-08-05",
+      "interest": "09164567890",
+      "address": "09164567890",
+      "id": 6
     }
-    
   ],
   "products": [
     {
@@ -518,36 +531,8 @@
   "cart": [
     {
       "id": 1,
-      "username": "belle",
+      "username": "jaz",
       "password": "aloha",
-      "orders": [],
-      "cartTotalQuantity": 0,
-      "grandTotal": 0
-    },
-    {
-      "id": 2,
-      "username": "jayson",
-      "password": "ultraman",
-      "orders": [
-        {
-          "id": 1,
-          "name": "Adidas",
-          "title": "SuperStar",
-          "price": 5300,
-          "description": "Regular fit, Lace closure, Leather upper, Comfortable",
-          "category": "adidas",
-          "image": "assets/images/products/shoes/adidas/superstar.png",
-          "itemQuantity": 5,
-          "itemTotalPrice": 26500
-        }
-      ],
-      "cartTotalQuantity": 5,
-      "grandTotal": 26500
-    },
-    {
-      "id": 3,
-      "username": "ultraman",
-      "password": "ultraman",
       "orders": [
         {
           "id": 1,

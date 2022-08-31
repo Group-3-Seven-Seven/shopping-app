@@ -6,3 +6,28 @@
     color: rgb(107, 107, 215);
     text-decoration: underline;
 }
+
+.card {
+    height: 70vh;
+    margin: 25px;
+    padding: 25px;
+} 
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    margin: 20px 0px;
+}
+h4 {
+    font-weight: 400;
+}

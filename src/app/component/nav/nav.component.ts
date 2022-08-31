@@ -38,7 +38,7 @@ export class NavComponent implements OnInit {
   }
 
   logout() {   
-    // this.cartService.updateStockAndItemSale();                      
+    this.cartService.updateStockAndItemSale();                      
     this.router.navigate(['/product']);
     localStorage.clear();
 
@@ -49,7 +49,5 @@ export class NavComponent implements OnInit {
       this.username = data.username
       console.log(data.role)
     })
-  }
-
-  
+  }  
 }

@@ -168,34 +168,37 @@ export class CartService {
   updateStockAndItemSale(){
     this.apiService.getProducts().subscribe((data:any) => {
       data.map((a:any) => {
-        this.products(a)
+        console.log("updateStockandItemSale")
+        console.log(a)
+        // this.products(a)
+
       })
     })
-    this.cart();
+    // this.cart();
   }
 
-  cart(){
-    this.userCartService.getUserCart().subscribe((data) => {
-      data.orders.map((a:any) => {
-        this.cartOrderList.push(a);   
-      })
-    })
-  }
+  // cart(){
+  //   this.userCartService.getUserCart().subscribe((data) => {
+  //     data.orders.map((a:any) => {
+  //       this.cartOrderList.push(a);   
+  //     })
+  //   })
+  // }
 
-  products(data:any){
-    for(let x=0; x<this.cartOrderList.length; x++){
-      if(this.cartOrderList[x].id === data.id){
-        data.stock = data.stock -  this.cartOrderList[x].itemQuantity;
-        data.totalItemSale = data.totalItemSale + this.cartOrderList[x].itemQuantity
-        this.updateProductApi(data.id, data)
-      }
-    }
-  }
+  // products(data:any){
+  //   for(let x=0; x<this.cartOrderList.length; x++){
+  //     if(this.cartOrderList[x].id === data.id){
+  //       data.stock = data.stock -  this.cartOrderList[x].itemQuantity;
+  //       data.totalItemSale = data.totalItemSale + this.cartOrderList[x].itemQuantity
+  //       this.updateProductApi(data.id, data)
+  //     }
+  //   }
+  // }
 
-  updateProductApi(id:number, product: any){
-    this.apiService.updateProducts(id, product).subscribe((result) => {
-    })
-  }
+  // updateProductApi(id:number, product: any){
+  //   this.apiService.updateProducts(id, product).subscribe((result) => {
+  //   })
+  // }
 
   // topItems(){
   //   this.apiService.getProducts().subscribe((data:any) => {

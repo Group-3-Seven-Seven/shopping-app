@@ -5,12 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TopFivePipe implements PipeTransform {
 
-  transform(value: any[], x: any): any[] {
+  transform(value: any[]): any[] {
     var result: any = [];
     const sortItem: string = "totalItemSale";
     let multiplier = -1;
  
-    if(!value || x === null || x < 0){
+    if(!value){
       return value;
     }
     value.sort((a: any, b: any) => {
@@ -23,8 +23,8 @@ export class TopFivePipe implements PipeTransform {
         }
       });  
 
-      for(let i=0; i<x; i++){
-        result.push(value[x])
+      for(let i=0; i<5; i++){
+        result.push(value[i])
       }
       return result;
   }
