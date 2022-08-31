@@ -21,12 +21,19 @@ export class ProfileComponent implements OnInit {
   formValue !: FormGroup;
   userData !: any;
   dashboardObj: ProfileModel = new ProfileModel();
-  firstName !: string
+  userName: string = "";
+  firstName: string = "";
+  middleName: string = "";
+  lastName: string = "";
+  mobile: string = "";
+  eMail: string = "";
+  bDate: string = "";
 
 
   constructor(private formbuilder: FormBuilder,
     private api: ApiService, private http: HttpClient,
-    private router: Router, private userCartService: UserCartService) { }
+    private router: Router, private userCartService: UserCartService,
+    private userCart: UserCartService) { }
 
   ngOnInit(): void {
     this.formValue = this.formbuilder.group({
@@ -48,8 +55,14 @@ export class ProfileComponent implements OnInit {
   getUserName(){
     this.userCartService.getUserDetails().subscribe((data:any) => {
       console.log(data)
+      this.userName = data.username
+      console.log(this.userName)
       this.firstName = data.firstname
-      console.log(this.firstName)
+      this.middleName = data.middlename
+      this.lastName = data.lastname
+      this.mobile = data.mobilenumber
+      this.eMail = data.email
+      this.bDate = data.birthdate
     })
   }
 

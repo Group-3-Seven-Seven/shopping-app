@@ -16,6 +16,7 @@ export class CheckOutComponent implements OnInit {
   lastName: string ="";
   fullname: string = "";
   mobile: string = "";
+  Address: string = "";
   houseStreet: string = "";
   city: string = "";
   barangay: string = "";
@@ -53,6 +54,7 @@ export class CheckOutComponent implements OnInit {
       this.middleName = data.middlename
       this.lastName = data.lastname
       this.mobile = data.mobilenumber
+      this.Address = data.address
     })
   }
 }

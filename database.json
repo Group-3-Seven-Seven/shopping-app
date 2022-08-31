@@ -31,19 +31,31 @@
       "id": 5
     },
     {
-      "username": "jayson",
-      "password": "ultraman",
+      "id": 6,
       "firstname": "jayson",
       "middlename": "amaga",
       "lastname": "sequino",
+      "username": "jayson",
       "email": "jayson@gmail.com",
+      "password": "ultraman",
       "mobilenumber": "09123456789",
       "role": "user",
+      "status": "deactivated"
+    },
+    {
+      "username": "ultraman",
+      "password": "ultraman",
+      "firstname": "Jayon",
+      "middlename": "Amaga",
+      "lastname": "Sequino",
+      "email": "ultraman@gmail.com",
+      "mobilenumber": "09123827461",
+      "role": "user",
       "status": "activated",
-      "birthdate": "1997-03-24",
-      "interest": "playing",
-      "address": "25 ultraman st. ultra man city",
-      "id": 6
+      "birthdate": "1990-06-13",
+      "interest": "Playing",
+      "address": "26 Ultraman St. Ultra Man City",
+      "id": 7
     }
   ],
   "products": [
@@ -55,8 +67,8 @@
       "description": "Regular fit, Lace closure, Leather upper, Comfortable",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/superstar.png",
-      "totalItemSale": 49,
-      "stock": 1
+      "totalItemSale": 89,
+      "stock": -39
     },
     {
       "id": 2,
@@ -66,8 +78,8 @@
       "description": "Lace closure, Synthetic upper, Rubber outsole, Vegan",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/stansmith.png",
-      "totalItemSale": 5,
-      "stock": 45
+      "totalItemSale": 8,
+      "stock": 42
     },
     {
       "id": 3,
@@ -77,8 +89,8 @@
       "description": "Lace closure, Stretchy knit upper, BOOST midsole, Imported",
       "category": "adidas",
       "image": "assets/images/products/shoes/adidas/nmd_s1.png",
-      "totalItemSale": 1,
-      "stock": 49
+      "totalItemSale": 2,
+      "stock": 48
     },
     {
       "id": 4,
@@ -571,6 +583,48 @@
       ],
       "cartTotalQuantity": 5,
       "grandTotal": 26500
+    },
+    {
+      "id": 3,
+      "username": "ultraman",
+      "password": "ultraman",
+      "orders": [
+        {
+          "id": 1,
+          "name": "Adidas",
+          "title": "SuperStar",
+          "price": 5300,
+          "description": "Regular fit, Lace closure, Leather upper, Comfortable",
+          "category": "adidas",
+          "image": "assets/images/products/shoes/adidas/superstar.png",
+          "itemQuantity": 1,
+          "itemTotalPrice": 5300
+        },
+        {
+          "id": 2,
+          "name": "Adidas",
+          "title": "Stan Smith",
+          "price": 5300,
+          "description": "Lace closure, Synthetic upper, Rubber outsole, Vegan",
+          "category": "adidas",
+          "image": "assets/images/products/shoes/adidas/stansmith.png",
+          "itemQuantity": 1,
+          "itemTotalPrice": 5300
+        },
+        {
+          "id": 3,
+          "name": "Adidas",
+          "title": "NMD S1",
+          "price": 9000,
+          "description": "Lace closure, Stretchy knit upper, BOOST midsole, Imported",
+          "category": "adidas",
+          "image": "assets/images/products/shoes/adidas/nmd_s1.png",
+          "itemQuantity": 1,
+          "itemTotalPrice": 9000
+        }
+      ],
+      "cartTotalQuantity": 3,
+      "grandTotal": 19600
     }
   ]
 }
