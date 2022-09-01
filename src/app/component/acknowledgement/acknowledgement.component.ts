@@ -9,6 +9,7 @@ import { UserCartService } from 'src/app/service/userCart.service';
 export class AcknowledgementComponent implements OnInit {
 
   password !:string
+  username !: string
 
   constructor(private userCartService : UserCartService) { }
 
@@ -18,6 +19,7 @@ export class AcknowledgementComponent implements OnInit {
   getUserName(){
     this.userCartService.getUserDetails().subscribe((data:any) => {
       this.password = data.password
+      this.username = data.username
     })
   }
 }

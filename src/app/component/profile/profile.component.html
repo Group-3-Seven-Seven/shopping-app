@@ -5,48 +5,54 @@
                 <div class="text-center">
                     <h1>User Profile</h1>
                 </div>
-                <form >
+                <form [formGroup]="formValue" (ngSubmit)="updateUserDetails()">
                         <div class="mb-3">
                             <label for="username">Username</label>
-
-                            <input [disabled] = "this.disabled" type="text" class="form-control" value="{{dashboardObj.username}}" id="username" aria-describedby="emailHelp">
+                            <input type="text" formControlName="username" class="form-control" placeholder="{{dashboardObj.username}}" id="exampleInputPassword1" >
+                            <span class="text-danger" *ngIf="formValue.controls['username'].touched && formValue.hasError('required','username')">Username is required</span>
                           </div>
                           <div class="mb-3">
                               <label for="firstname">First Name</label>
-                              <input [disabled] = "this.disabled" type="text" class="form-control" value="{{dashboardObj.firstname}}" id="fullname" aria-describedby="emailHelp">
-                           </div>
+                              <input type="text" formControlName="firstname" class="form-control" placeholder="{{dashboardObj.firstname}}" id="exampleInputPassword1" placeholder="First Name">
+                              <span class="text-danger" *ngIf="formValue.controls['firstname'].touched && formValue.hasError('required','firstname')">First Name is required</span>
+                            </div>
                           <div class="mb-3">
                               <label for="middlename">Middle Name</label>
-                              <input [disabled] = "this.disabled" type="text" class="form-control" value="{{dashboardObj.middlename}}" id="middlename" aria-describedby="emailHelp">
-                          </div>
+                              <input type="text" formControlName="middlename" class="form-control" placeholder="{{dashboardObj.middlename}}" id="exampleInputPassword1" placeholder="Middle Name">
+                              <span class="text-danger" *ngIf="formValue.controls['middlename'].touched && formValue.hasError('required','middlename')">Midde Name is required</span>
+                            </div>
                           <div class="mb-3">
                               <label for="lastname">Last Name</label>
-                              <input [disabled] = "this.disabled" type="text" class="form-control" value="{{dashboardObj.lastname}}" id="lastname" aria-describedby="emailHelp">
+                              <input type="text" formControlName="lastname" class="form-control" placeholder="{{dashboardObj.lastname}}" id="exampleInputPassword1" placeholder="Last Name">
+                              <span class="text-danger" *ngIf="formValue.controls['lastname'].touched && formValue.hasError('required','lastname')">Last Name is required</span>
                           </div>
                           <div class="form-group mb-3">
                               <label for="email">Email</label>
-                              <input [disabled] = "this.disabled" type="email" class="form-control" value="{{dashboardObj.email}}" id="email" aria-describedby="emailHelp">
+                              <input type="email" formControlName="email" class="form-control" placeholder="{{dashboardObj.email}}" id="exampleInputPassword1" placeholder="example@gmail.com">
+                              <span class="text-danger" *ngIf="formValue.controls['email'].touched && formValue.hasError('required','email')">Email is required</span>
                               
                           </div>
                           <div class="form-group mb-3">
                             <label for="mobilenumber">Mobile Number</label>
-                            <input [disabled] = "this.disabled" type="number" class="form-control" value="{{dashboardObj.mobilenumber}}" id="mobilenumber" aria-describedby="emailHelp">
+                            <input type="text" formControlName="mobilenumber" maxlength="11" class="form-control" placeholder="{{dashboardObj.mobilenumber}}" id="exampleInputPassword1" placeholder="mobilenumber">
+                            <span class="text-danger" *ngIf="formValue.controls['mobilenumber'].touched && formValue.hasError('required','mobilenumber')">Mobile Number is required</span>
                         </div>
                         <div class="form-group mb-3">
                             <label for="bday">Birth Date</label>
-                            <input [disabled] = "this.disabled" type="date" class="form-control" value="{{dashboardObj.birthdate}}" id="birthdate" aria-describedby="emailHelp">
+                            <input type="date" formControlName="birthdate" class="form-control" value="{{dashboardObj.birthdate}}" id="exampleInputPassword1" placeholder="Birthdate">
                         </div>
                         <div class="form-group mb-3">
                             <label for="address">Address</label>
-                            <input [disabled] = "this.disabled" type="text" class="form-control" value="{{dashboardObj.address}}" id="address" aria-describedby="emailHelp">
+                            <input type="text" formControlName="address" class="form-control" placeholder="{{dashboardObj.address}}" id="exampleInputPassword1" placeholder="Address">
+                            <span class="text-danger" *ngIf="formValue.controls['address'].touched && formValue.hasError('required','address')">Address is required</span>
                         </div>
                         <div class="form-group mb-3">
                             <label for="interest">Interest</label>
-                            <input [disabled] = "this.disabled" type="text" class="form-control" value="{{dashboardObj.interest}}" id="interest" aria-describedby="emailHelp">
+                            <input type="text" formControlName="interest" class="form-control" placeholder="{{dashboardObj.interest}}" id="exampleInputPassword1" placeholder="Interest">
+                            <span class="text-danger" *ngIf="formValue.controls['interest'].touched && formValue.hasError('required','interest')">Interest is required</span>
                         </div>
-                        <button *ngIf="showEdit" type="button"  (click)="onEdit(dashboardObj)" class="btn btn-primary">Edit</button>
-                        <button  type="button" *ngIf="showUpdate" (click)="updateUserDetails()" class="btn btn-primary">Update</button>
-
+                        
+                        <button [disabled]="!formValue.touched"  type="submit" routerLink="../product" class="btn btn-primary">Update</button>
                         <br>
                 </form>
             </div>
