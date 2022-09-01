@@ -13,11 +13,7 @@
       "birthdate": "2022-08-30",
       "interest": "biking",
       "address": "Taguig City",
-<<<<<<< HEAD
-      "id": 1
-=======
       "id": 0
->>>>>>> 5b5d22ec08272684ea9b91286bd83c658f5caf7c
     }
   ],
   "products": [
@@ -518,9 +514,5 @@
     }
   ],
   "cart": [
-<<<<<<< HEAD
-=======
-   
->>>>>>> 5b5d22ec08272684ea9b91286bd83c658f5caf7c
   ]
 }
