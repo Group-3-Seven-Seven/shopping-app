@@ -17,18 +17,18 @@
     },
     {
       "id": 6,
-      "firstname": "alisa",
-      "middlename": "aloha",
-      "lastname": "alisa",
-      "username": "jaz",
-      "email": "carla@gmail.com",
+      "firstname": "John Hedric",
+      "middlename": "Magan",
+      "lastname": "Pontill",
+      "username": "hedrick281",
+      "email": "pontilla.hedrick08@gmail.com",
       "password": "aloha",
-      "mobilenumber": "09164567890",
+      "mobilenumber": "09321785141",
       "role": "user",
       "status": "activated",
-      "address": "Taguig",
-      "interest": "Sleep",
-      "birthdate": "2022-08-05"
+      "address": "Taguig City",
+      "interest": "Megamind",
+      "birthdate": "2022-09-21"
     },
     {
       "id": 7,
@@ -42,10 +42,23 @@
       "role": "user",
       "status": "activated",
       "address": "28 Ultraman St. Ultra Man City",
-
       "interest": "Ultraman",
       "birthdate": "1995-05-05"
-
+    },
+    {
+      "id": 8,
+      "firstname": "James",
+      "middlename": "Cutalio",
+      "lastname": "Liston",
+      "username": "admin212",
+      "email": "jcl@gmail.com",
+      "password": "user",
+      "mobilenumber": "09192831932",
+      "role": "user",
+      "status": "activated",
+      "address": "Taguig",
+      "interest": "Sleep",
+      "birthdate": "2021-03-04"
     }
   ],
   "products": [
@@ -56,7 +69,7 @@
       "price": 5300,
       "description": "Regular fit, Lace closure, Leather upper, Comfortable",
       "category": "adidas",
-      "stock": 60,
+      "stock": 65,
       "image": "assets/images/products/shoes/adidas/superstar.png",
       "totalItemSale": 10
     },

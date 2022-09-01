@@ -39,8 +39,6 @@ export class ProductAdminDashboardComponent implements OnInit {
     })
     this.getAllProducts();
     this.api.getProducts().subscribe(data => {
-      console.log("product admin")
-      console.log(this.productData.id)
       this.productList = data;
     });
   }
@@ -70,7 +68,6 @@ export class ProductAdminDashboardComponent implements OnInit {
 
     this.api.postProduct(this.productObj)
       .subscribe((res: any) => {
-        console.log(res);
         alert("Product added successfully!")
         let ref = document.getElementById('cancel')
         ref?.click();

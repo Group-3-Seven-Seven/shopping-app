@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 import { UserCartService } from 'src/app/service/userCart.service';
@@ -41,37 +41,36 @@ export class ProfileComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       mobilenumber: ['', [Validators.required, Validators.pattern(/[0-9\+\-\ ]/)]],
       role: ['user'],
-      status: [''],
+      status: ['activated'],
       birthdate: Date,
       interest: ['', Validators.required],
       address: ['', Validators.required],
     })
-    this.getUserName()
+    this.onEdit(this.data)
   }
 
 
   getUserName() {
     this.userCartService.getUserDetails().subscribe((data: any) => {
-      this.dashboardObj.username = data.username
-      this.dashboardObj.firstname = data.firstname
-      this.dashboardObj.middlename = data.middlename
-      this.dashboardObj.lastname = data.lastname
-      this.dashboardObj.mobilenumber = data.mobilenumber
-      this.dashboardObj.email = data.email
-      this.dashboardObj.birthdate = data.birthdate
-      this.dashboardObj.address = data.address
-      this.dashboardObj.interest = data.interest
       this.dashboardObj.role = data.role
       this.dashboardObj.status = data.status
       this.dashboardObj.id = data.id
       this.dashboardObj.password = data.password
-      console.log(this.dashboardObj.mobilenumber)
-      console.log(data.mobilenumber)
+    })
+  }
+
+  getDetails(id : number){
+    this.api.getProfile(id)
+    .subscribe(res => {
+      this.dashboardObj = res
+      this.data = this.dashboardObj
     })
   }
 
 
   onEdit(data: any) {
+    this.getUserName()
+    this.getDetails(this.dashboardObj.id)
     this.formValue.controls['firstname'].setValue(data.firstname)
     this.formValue.controls['middlename'].setValue(data.middlename)
     this.formValue.controls['lastname'].setValue(data.lastname)
@@ -110,7 +109,7 @@ export class ProfileComponent implements OnInit {
         ref?.click();
         this.formValue.reset();
         this.getUserName();
-        console.log(this.dashboardObj.interest)
+        
       })
   }
 

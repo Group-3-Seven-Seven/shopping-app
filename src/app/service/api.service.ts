@@ -59,10 +59,12 @@ export class ApiService {
     return this.http.put<any>("http://localhost:3000/post/"+id , data)
     .pipe(map((res:any)=>{return res}))
   }
-  getProfile(){
-    return this.http.get<any>("http://localhost:3000/user")
+  getProfile(id : number){
+    return this.http.get<any>("http://localhost:3000/post/" + id)
     .pipe(map((res:any)=>res))
   }
+
+
 
   postProfile(data : any){
     return this.http.post<any>("http://localhost:3000/user" , data)

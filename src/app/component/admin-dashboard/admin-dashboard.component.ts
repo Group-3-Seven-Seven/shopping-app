@@ -47,8 +47,6 @@ export class AdminDashboardComponent implements OnInit {
     this.getAllUser();
 
     this.api.getProducts().subscribe(data => {
-      console.log("product admin")
-      console.log(data)
       this.productList = data;
     });
   }
@@ -80,7 +78,6 @@ export class AdminDashboardComponent implements OnInit {
 
     this.api.postUser(this.dashboardObj)
       .subscribe((res: any) => {
-        console.log(res);
         alert("User added successfully!")
         let ref = document.getElementById('cancel')
         ref?.click();
