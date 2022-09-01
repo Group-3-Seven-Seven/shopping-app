@@ -16,8 +16,7 @@
           <div class="form-group mb-3">
               <div class="form-group mb-3">
                   <label for="address">Address</label><br>
-                  <textarea type="text" [(ngModel)]="Address" id="address" aria-describedby="emailHelp" placeholder="{{Address}}"></textarea>
-                <button class="btn btn-primary" (click)="handleClear()" onclick="this.hidden=true">Edit Address</button>
+                  <textarea disabled type="text" [(ngModel)]="Address" id="address" aria-describedby="emailHelp" placeholder="{{Address}}"></textarea>
                 </div>
             </div>
           <button type="submit" class="btn btn-primary" (click) = save()>Confirm</button>  
