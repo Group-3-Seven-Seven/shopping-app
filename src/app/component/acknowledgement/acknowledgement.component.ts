@@ -17,9 +17,7 @@ export class AcknowledgementComponent implements OnInit {
   }
   getUserName(){
     this.userCartService.getUserDetails().subscribe((data:any) => {
-      console.log(data)
       this.password = data.password
-      console.log(this.password)
     })
   }
 }
