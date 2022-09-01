@@ -36,8 +36,6 @@ export class ForgotPasswordComponent implements OnInit {
         });
         if (user) {
             this.password = user.password
-            this.router.navigate(['acknowledgement'])
-            // alert( "Your password is " + this.password)
             this.userCartService.loadUserDetails(cartName,this.password)
             this.forgotPassword.reset();
             this.router.navigate(['acknowledgement'])

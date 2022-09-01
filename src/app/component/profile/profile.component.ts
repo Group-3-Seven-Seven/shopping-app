@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   disabled : boolean = true
   showEdit : boolean = true
   showUpdate !: boolean
+  data : any ={}
 
 
   constructor(private formbuilder: FormBuilder,
@@ -66,7 +67,6 @@ export class ProfileComponent implements OnInit {
       this.dashboardObj.password = data.password
       console.log(this.dashboardObj.mobilenumber)
       console.log(data.mobilenumber)
-
     })
   }
 
@@ -84,6 +84,7 @@ export class ProfileComponent implements OnInit {
     this.disabled = false;
     this.showEdit = false;
     this.showUpdate = true;
+
   }
 
   updateUserDetails() {
@@ -100,6 +101,8 @@ export class ProfileComponent implements OnInit {
     this.dashboardObj.address = this.formValue.value.address
     this.dashboardObj.interest = this.formValue.value.interest
 
+    
+
     this.api.updateUser(this.dashboardObj, this.dashboardObj.id)
       .subscribe(res => {
         alert("Updated Successfully!")
@@ -107,6 +110,7 @@ export class ProfileComponent implements OnInit {
         ref?.click();
         this.formValue.reset();
         this.getUserName();
+        console.log(this.dashboardObj.interest)
       })
   }
 

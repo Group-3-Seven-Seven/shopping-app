@@ -26,24 +26,24 @@
       "mobilenumber": "09164567890",
       "role": "user",
       "status": "activated",
-      "address": "09164567890",
-      "interest": "09164567890",
+      "address": "Taguig",
+      "interest": "Sleep",
       "birthdate": "2022-08-05"
     },
     {
-      "username": "ultraman",
-      "password": "ultraman",
+      "id": 7,
       "firstname": "Jayson",
       "middlename": "Amaga",
       "lastname": "Sequino",
+      "username": "ultraman",
       "email": "ultraman@gmail.com",
+      "password": "ultraman",
       "mobilenumber": "09123456789",
       "role": "user",
       "status": "activated",
-      "birthdate": "1995-05-05",
-      "interest": "Ultraman",
       "address": "28 Ultraman St. Ultra Man City",
-      "id": 7
+      "interest": "Ultraman",
+      "birthdate": "1995-05-05"
     }
   ],
   "products": [
@@ -54,7 +54,7 @@
       "price": 5300,
       "description": "Regular fit, Lace closure, Leather upper, Comfortable",
       "category": "adidas",
-      "stock": 50,
+      "stock": 60,
       "image": "assets/images/products/shoes/adidas/superstar.png",
       "totalItemSale": 10
     },
@@ -557,8 +557,8 @@
           "description": "Regular fit, Lace closure, Leather upper, Comfortable",
           "category": "adidas",
           "image": "assets/images/products/shoes/adidas/superstar.png",
-          "itemQuantity": 1,
-          "itemTotalPrice": 5300
+          "itemQuantity": 2,
+          "itemTotalPrice": 10600
         },
         {
           "id": 2,
@@ -583,8 +583,8 @@
           "itemTotalPrice": 9000
         }
       ],
-      "cartTotalQuantity": 3,
-      "grandTotal": 19600
+      "cartTotalQuantity": 4,
+      "grandTotal": 24900
     },
     {
       "id": 2,
