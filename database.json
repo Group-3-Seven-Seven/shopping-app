@@ -42,8 +42,10 @@
       "role": "user",
       "status": "activated",
       "address": "28 Ultraman St. Ultra Man City",
+
       "interest": "Ultraman",
       "birthdate": "1995-05-05"
+
     }
   ],
   "products": [
@@ -590,6 +592,14 @@
       "id": 2,
       "username": "ultraman",
       "password": "ultraman",
+      "orders": [],
+      "cartTotalQuantity": 0,
+      "grandTotal": 0
+    },
+    {
+      "id": 3,
+      "username": "edrick",
+      "password": "edrick",
       "orders": [
         {
           "id": 1,

@@ -20,7 +20,6 @@ export class AcknowledgementComponent implements OnInit {
       this.password = data.password
     })
   }
-
 }
 
 
