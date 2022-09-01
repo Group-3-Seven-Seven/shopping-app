@@ -44,6 +44,21 @@
       "interest": "Ultraman",
       "address": "28 Ultraman St. Ultra Man City",
       "id": 7
+    },
+    {
+      "username": "edrick",
+      "password": "edrick",
+      "firstname": "Edrick",
+      "middlename": "Chua",
+      "lastname": "Carreon",
+      "email": "edrick@gmail.com",
+      "mobilenumber": "09123456789",
+      "role": "user",
+      "status": "activated",
+      "birthdate": "1998-02-03",
+      "interest": "Sleeping",
+      "address": "25 Makabayan St. Nangka Marikina City",
+      "id": 8
     }
   ],
   "products": [
@@ -590,6 +605,14 @@
       "id": 2,
       "username": "ultraman",
       "password": "ultraman",
+      "orders": [],
+      "cartTotalQuantity": 0,
+      "grandTotal": 0
+    },
+    {
+      "id": 3,
+      "username": "edrick",
+      "password": "edrick",
       "orders": [
         {
           "id": 1,

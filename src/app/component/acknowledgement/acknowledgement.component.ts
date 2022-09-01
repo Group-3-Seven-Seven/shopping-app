@@ -22,7 +22,6 @@ export class AcknowledgementComponent implements OnInit {
       console.log(this.password)
     })
   }
-
 }
 
 
