@@ -5,7 +5,7 @@
                 <div class="text-center">
                     <h1>User Profile</h1>
                 </div>
-                <form [formGroup]="formValue" (ngSubmit)="updateUserDetails()">
+                <form [formGroup]="formValue">
                         <div class="mb-3">
                             <label for="username">Username</label>
                             <input type="text" formControlName="username" class="form-control" placeholder="{{dashboardObj.username}}" id="exampleInputPassword1" >
@@ -52,7 +52,7 @@
                             <span class="text-danger" *ngIf="formValue.controls['interest'].touched && formValue.hasError('required','interest')">Interest is required</span>
                         </div>
                         
-                        <button [disabled]="!formValue.touched"  type="submit" routerLink="../product" class="btn btn-primary">Update</button>
+                        <button [disabled]="!formValue.touched" (click)="updateUserDetails()"  type="button" routerLink="../product" class="btn btn-primary">Update</button>
                         <br>
                 </form>
             </div>
