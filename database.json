@@ -41,7 +41,6 @@
       "mobilenumber": "09123456789",
       "role": "user",
       "status": "activated",
-      "address": "28 Ultraman St. Ultra Man City",
       "interest": "Ultraman",
       "birthdate": "1995-05-05"
     },
@@ -59,6 +58,21 @@
       "address": "Taguig",
       "interest": "Sleep",
       "birthdate": "2021-03-04"
+    },
+    {
+      "username": "edrick",
+      "password": "edrick",
+      "firstname": "Edrick",
+      "middlename": "Chua",
+      "lastname": "Carreon",
+      "email": "edrickpogi@gmail.com",
+      "mobilenumber": "1234567890",
+      "role": "user",
+      "status": "activated",
+      "birthdate": "1999-06-23",
+      "interest": "Playing",
+      "address": "25 Makabayan St. Nangka, Marikina City",
+      "id": 9
     }
   ],
   "products": [
@@ -605,9 +619,32 @@
       "id": 2,
       "username": "ultraman",
       "password": "ultraman",
-      "orders": [],
-      "cartTotalQuantity": 0,
-      "grandTotal": 0
+      "orders": [
+        {
+          "id": 1,
+          "name": "Adidas",
+          "title": "SuperStar",
+          "price": 5300,
+          "description": "Regular fit, Lace closure, Leather upper, Comfortable",
+          "category": "adidas",
+          "image": "assets/images/products/shoes/adidas/superstar.png",
+          "itemQuantity": 3,
+          "itemTotalPrice": 15900
+        },
+        {
+          "id": 2,
+          "name": "Adidas",
+          "title": "Stan Smith",
+          "price": 5300,
+          "description": "Lace closure, Synthetic upper, Rubber outsole, Vegan",
+          "category": "adidas",
+          "image": "assets/images/products/shoes/adidas/stansmith.png",
+          "itemQuantity": 2,
+          "itemTotalPrice": 10600
+        }
+      ],
+      "cartTotalQuantity": 5,
+      "grandTotal": 26500
     },
     {
       "id": 3,
@@ -639,6 +676,14 @@
       ],
       "cartTotalQuantity": 2,
       "grandTotal": 10600
+    },
+    {
+      "id": 4,
+      "username": "edrick",
+      "password": "edrick",
+      "orders": [],
+      "cartTotalQuantity": 0,
+      "grandTotal": 0
     }
   ]
 }

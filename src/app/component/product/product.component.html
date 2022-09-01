@@ -25,26 +25,22 @@
                     <span class="input-group-text" id="basic-addon1">Max</span>
                     <input [(ngModel)] = "max" type="number" id="max" class="form-control" min="0">&nbsp;
                     <button (click) = "resetFilterByPrice()">Reset</button>
-            </div>
+                </div>
             </td>
         </tr>
     </table>
-    
-     <br/>
+ <br/>
+
 <ng-container *ngIf="(filterByCategory | filter:searchKey:'title') as result">    
     <div class="card shadow-sm">
         <div class=" row" >
             <ng-container *ngFor="let item of result | pricefilter:[min, max] | sort:[SortbyParam, SortDirection]">
                 <div class="card col-md-2">
-
                     <h4> {{item.name}}</h4>
                         <img src="{{item.image}}" alt="{{item.title}}">
                         <h6> {{item.title}} </h6>
                         <small>{{item.description}}</small>
                         <p><strong> {{item.price | currency: '&#8369;' : 'code'}} </strong></p>
-                        
-                            
-                        
                         <div class="d-grid gap-2 d-md-block">
                             <button type="button" class="btn btn-primary"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
@@ -55,8 +51,7 @@
         </div>
     </div>
     <app-not-found [visible]="result.length<=0 || !(result | pricefilter:[min, max])?.length"></app-not-found>
-    </ng-container>
+</ng-container>
 </div>
 <br>
-<hr>
 <app-footer></app-footer>
