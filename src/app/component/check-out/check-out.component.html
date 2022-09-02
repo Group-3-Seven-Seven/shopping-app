@@ -19,7 +19,6 @@
                   <textarea disabled type="text" [(ngModel)]="Address" id="address" aria-describedby="emailHelp" placeholder="{{Address}}"></textarea>
                 </div>
             </div>
-          <button type="submit" class="btn btn-primary" (click) = save()>Confirm</button>  
     </ng-container>
     <ng-container *ngIf="!visibility">
         <h6> Full Name:</h6>
@@ -70,7 +69,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><br><button class="btn btn-primary" (click)="placeOrder()" [disabled]="visibility">Place&nbsp;Order</button></td>
+                        <td><br><button class="btn btn-primary" (click)="placeOrder()">Place&nbsp;Order</button></td>
                         <p *ngIf = "visibility"><i> Confirm Delivery Information </i></p>
                     </tr>
                 </tbody>

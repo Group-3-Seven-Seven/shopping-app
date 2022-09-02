@@ -33,10 +33,6 @@ export class CheckOutComponent implements OnInit {
     this.router.navigate(['/pendingpage']);
   }
 
-  save(){
-    this.visibility = false;
-  }
-
   setCartDetails(){
     this.userCart.getUserCart().subscribe((data:any) => {
       this.grandTotal = data.grandTotal;
