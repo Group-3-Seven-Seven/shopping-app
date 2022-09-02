@@ -14,21 +14,6 @@
       "interest": "biking",
       "address": "Taguig City",
       "id": 0
-    },
-    {
-      "username": "asd",
-      "password": "edrick",
-      "firstname": "asd",
-      "middlename": "asd",
-      "lastname": "asd",
-      "email": "asd@gmail.com",
-      "mobilenumber": "123",
-      "role": "user",
-      "status": "activated",
-      "birthdate": "2022-09-21",
-      "interest": "asd",
-      "address": "asd",
-      "id": 1
     }
   ],
   "products": [
@@ -529,25 +514,5 @@
     }
   ],
   "cart": [
-    {
-      "id": 1,
-      "username": "Edrick",
-      "password": "edrick",
-      "orders": [
-        {
-          "id": 1,
-          "name": "Adidas",
-          "title": "SuperStar",
-          "price": 5300,
-          "description": "Regular fit, Lace closure, Leather upper, Comfortable",
-          "category": "adidas",
-          "image": "assets/images/products/shoes/adidas/superstar.png",
-          "itemQuantity": 1,
-          "itemTotalPrice": 5300
-        }
-      ],
-      "cartTotalQuantity": 1,
-      "grandTotal": 5300
-    }
   ]
 }
